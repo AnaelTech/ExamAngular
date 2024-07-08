@@ -1,0 +1,27 @@
+<div class="container mx-auto flex flex-center justify-center hidden" id="alert">
+    <app-alert></app-alert>
+</div>
+<div class=" container mx-auto flex flex-row grid grid-cols-3 gap-4 mt-5 max-w-screen-xl flex flex-wrap items-center
+    justify-between mx-auto p-4">
+    <div *ngFor="let product of products">
+        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <img class="rounded-t-lg" [src]="product.image" alt="" width="200" height="200" />
+            <div class="p-5">
+                <a href="#">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{product.name}}
+                    </h5>
+                    <span>Price : {{product.price}} €</span>
+                </a>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                    {{product.description}}
+                </p>
+                <button (click)="addProductToCart(product.id)" data-modal-target="default-modal"
+                    data-modal-toggle="default-modal"
+                    class="block text-white bg-blue-600 hover:bg-blue-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                    type="button">
+                    Ajouter au panier
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
