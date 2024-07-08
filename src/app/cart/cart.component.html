@@ -12,8 +12,8 @@
             </p>
         </div>
 
-        <div *ngFor="let product of selectedProducts"
-            class="grid grid-cols-1 lg:grid-cols-2 min-[550px]:gap-6 border-t border-gray-200 py-6">
+        @for(product of selectedProducts; track product.id){
+        <div class="grid grid-cols-1 lg:grid-cols-2 min-[550px]:gap-6 border-t border-gray-200 py-6">
             <div
                 class="flex items-center flex-col min-[550px]:flex-row gap-3 min-[550px]:gap-6 w-full max-xl:justify-center max-xl:max-w-xl max-xl:mx-auto">
                 <div class="img-box"><img [src]="product.image" alt="perfume bottle image" class="xl:w-[140px]"></div>
@@ -93,5 +93,6 @@
                 </svg>
             </button>
         </div>
+        }
     </div>
 </section>

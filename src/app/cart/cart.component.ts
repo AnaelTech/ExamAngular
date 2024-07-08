@@ -1,20 +1,21 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { CartService } from '../cart.service';
 import { Subject, takeUntil } from 'rxjs';
-import { CommonModule, NgFor } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { Product } from '../entitys';
 
 @Component({
   selector: 'app-cart',
   standalone: true,
-  imports: [NgFor, CommonModule],
+  imports: [CommonModule],
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.css',
 })
 export class CartComponent implements OnInit, OnDestroy {
-  selectedProducts: Product[] = [];
+  public selectedProducts: Product[] = [];
+  public CartService: CartService = inject(CartService);
 
-  constructor(public CartService: CartService) {}
+  constructor() {}
 
   private ngUnsubscribe: Subject<void> = new Subject<void>();
 

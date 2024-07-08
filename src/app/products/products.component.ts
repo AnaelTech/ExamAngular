@@ -7,7 +7,7 @@ import { AlertComponent } from '../alert/alert.component';
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [NgFor, AlertComponent],
+  imports: [AlertComponent],
   templateUrl: './products.component.html',
   styleUrl: './products.component.css',
 })
